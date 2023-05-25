@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;  // 要有這個才能控制文字框
 
-public class Shooting : MonoBehaviour
+public class Shooting: MonoBehaviour
 {
     [Header("參考物件")]
     public Camera PlayerCamera;
@@ -24,8 +24,7 @@ public class Shooting : MonoBehaviour
     public TextMeshProUGUI ammunitionDisplay; // 彈量顯示
     public TextMeshProUGUI reloadingDisplay;  // 顯示是不是正在換彈夾？
 
-    //bool allowInvoke = true;
-    public Animator ani;
+    public Animator animatorObject;  // 動畫播放器組件
 
     private void Start()
     {
@@ -89,7 +88,7 @@ public class Shooting : MonoBehaviour
 
         ShowAmmoDisplay();                 // 更新彈量顯示
 
-        ani.SetTrigger("Fire");
+        animatorObject.SetTrigger("Fire");  // 觸發「Fire」的觸發變數
     }
 
     // 方法：換彈夾的延遲時間設定
